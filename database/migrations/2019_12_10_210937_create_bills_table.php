@@ -15,6 +15,13 @@ class CreateBillsTable extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
+            $table->string('billnumber');
+            $table->string('currentreading');
+            $table->string('previousreading');
+            $table->string('totalkwh');
+            $table->string('totalecharge');
+            $table->string('finalbill');
             $table->timestamps();
         });
     }
