@@ -85,20 +85,18 @@ class RegisterController extends Controller
         $this->validate($request, [
             'lastname' => 'required|string',
             'firstname' => 'required|string',
-            'regnumber' => 'required',
             'email' => 'required|email|unique:users',
             'phone' => 'required',
-            'department_id' => 'required',
+            'address' => 'required',
+            'location_id' => 'required',
             'password' => 'required|string|min:6|confirmed',
         ]);
 
         $user = new User;
         $user->lastname = $request->lastname;
         $user->firstname = $request->firstname;
-        $user->useridentity = 'phcn' . date('Y') . '_' . rand(33000, 99955);
         $user->email = $request->email;
         $user->phone = $request->phone;
-        $user->department_id = $request->department_id;
         $user->password = bcrypt($request->password);
         $user->address = $request->address;
         $user->location_id = $request->location_id;
@@ -107,6 +105,6 @@ class RegisterController extends Controller
 
         $user->save();
 
-        return redirect(route('login'))->with('success', 'Your account has been created successfully with ref '.$user->useridentity);
+        return redirect(route('login'))->with('success', 'Your account has been created successfully!');
     }
 }

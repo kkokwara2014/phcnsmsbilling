@@ -52,13 +52,11 @@
                                         <tr>
                                             <th>Surname</th>
                                             <th>First Name</th>
-                                            <th>Identity Number</th>
                                             <th>Email</th>
                                             <th>Phone</th>
+                                            <th>Address</th>
                                             <th>View Details</th>
-                                            
-                                            
-
+                                        
                                             <th>Edit</th>
 
                                             @if (Auth::user()->role->id==1)
@@ -70,21 +68,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($students as $student)
-                                        @if ((Auth::user()->id==$student->id||Auth::user()->role->id==2||Auth::user()->role->id==1))
+                                        @foreach ($customers as $customer)
+                                        @if ((Auth::user()->id==$customer->id||Auth::user()->role->id==2||Auth::user()->role->id==1))
                                         <tr>
-                                            <td>{{$student->lastname}}</td>
-                                            <td>{{$student->firstname}}</td>
-                                            <td>{{$student->regnumber}}</td>
-
-                                            <td>{{$student->email}}</td>
-                                            <td>{{$student->phone}}</td>
+                                            <td>{{$customer->lastname}}</td>
+                                            <td>{{$customer->firstname}}</td>
+                                            
+                                            <td>{{$customer->email}}</td>
+                                            <td>{{$customer->phone}}</td>
+                                            <td>{{$customer->address}}</td>
                                             <td style="text-align: center">
-                                                <a href="{{ route('student.show',$student->id) }}"><span
+                                                <a href="{{ route('customer.show',$customer->id) }}"><span
                                                         class="fa fa-eye fa-2x text-primary"></span></a>
                                             </td>
                                             {{-- <td>
-                                                @if ($student->isactive==1)
+                                                @if ($customer->isactive==1)
                                                 <span class="fa fa-check-circle fa-2x text-success"></span>
                                                 @else
                                                 <span class="fa fa-close fa-2x text-danger"></span>
@@ -93,10 +91,10 @@
                                             </td> --}}
                                             {{-- @if (Auth::user()->role->id==1)
                                             <td>
-                                                @if ($student->isactive==1)
+                                                @if ($customer->isactive==1)
 
-                                                <form id="delete-form-{{$student->id}}" style="display: none"
-                                                    action="{{ route('student.deactivate',$student->id) }}"
+                                                <form id="delete-form-{{$customer->id}}" style="display: none"
+                                                    action="{{ route('customer.deactivate',$customer->id) }}"
                                                     method="post">
                                                     {{ csrf_field() }}
 
@@ -104,7 +102,7 @@
                                                 <a href="" onclick="
                                                                             if (confirm('Are you sure you want to Deactivate this?')) {
                                                                                 event.preventDefault();
-                                                                            document.getElementById('delete-form-{{$student->id}}').submit();
+                                                                            document.getElementById('delete-form-{{$customer->id}}').submit();
                                                                             } else {
                                                                                 event.preventDefault();
                                                                             }
@@ -113,15 +111,15 @@
                                                 </a>
                                                 @else
 
-                                                <form id="delete-form-{{$student->id}}" style="display: none"
-                                                    action="{{ route('student.activate',$student->id) }}" method="post">
+                                                <form id="delete-form-{{$customer->id}}" style="display: none"
+                                                    action="{{ route('customer.activate',$customer->id) }}" method="post">
                                                     {{ csrf_field() }}
 
                                                 </form>
                                                 <a href="" onclick="
                                                                             if (confirm('Are you sure you want to Activate this?')) {
                                                                                 event.preventDefault();
-                                                                            document.getElementById('delete-form-{{$student->id}}').submit();
+                                                                            document.getElementById('delete-form-{{$customer->id}}').submit();
                                                                             } else {
                                                                                 event.preventDefault();
                                                                             }
@@ -136,9 +134,9 @@
 
                                             
                                             <td style="text-align: center">
-                                                    @if (Auth::user()->id==$student->id)
+                                                    @if (Auth::user()->id==$customer->id)
                                                 <a
-                                                    href="{{ route('student.edit',$student->id) }}"><span
+                                                    href="{{ route('customer.edit',$customer->id) }}"><span
                                                         class="fa fa-edit fa-2x text-primary"></span></a>
                                                         @endif
                                             </td>
@@ -147,15 +145,15 @@
                                             @if (Auth::user()->role->id==1)
                                             <td style="text-align: center">
 
-                                                <form id="delete-form-{{$student->id}}" style="display: none"
-                                                    action="{{ route('student.destroy',$student->id) }}" method="post">
+                                                <form id="delete-form-{{$customer->id}}" style="display: none"
+                                                    action="{{ route('customer.destroy',$customer->id) }}" method="post">
                                                     {{ csrf_field() }}
                                                     {{method_field('DELETE')}}
                                                 </form>
                                                 <a href="" onclick="
                                                                 if (confirm('Are you sure you want to delete this?')) {
                                                                     event.preventDefault();
-                                                                document.getElementById('delete-form-{{$student->id}}').submit();
+                                                                document.getElementById('delete-form-{{$customer->id}}').submit();
                                                                 } else {
                                                                     event.preventDefault();
                                                                 }
@@ -167,18 +165,18 @@
                                         </tr>
                                         @elseif((Auth::user()->role->id==1))
                                         <tr>
-                                            <td>{{$student->lastname}}</td>
-                                            <td>{{$student->firstname}}</td>
-                                            <td>{{$student->regnumber}}</td>
-
-                                            <td>{{$student->email}}</td>
-                                            <td>{{$student->phone}}</td>
+                                            <td>{{$customer->lastname}}</td>
+                                            <td>{{$customer->firstname}}</td>
+                                            
+                                            <td>{{$customer->email}}</td>
+                                            <td>{{$customer->phone}}</td>
+                                            <td>{{$customer->address}}</td>
                                             <td style="text-align: center">
-                                                <a href="{{ route('student.show',$student->id) }}"><span
+                                                <a href="{{ route('customer.show',$customer->id) }}"><span
                                                         class="fa fa-eye fa-2x text-primary"></span></a>
                                             </td>
                                             {{-- <td>
-                                                @if ($student->isactive==1)
+                                                @if ($customer->isactive==1)
                                                 <span class="fa fa-check-circle fa-2x text-success"></span>
                                                 @else
                                                 <span class="fa fa-close fa-2x text-danger"></span>
@@ -189,10 +187,10 @@
 
                                             <td>
 
-                                                @if ($student->isactive==1)
+                                                @if ($customer->isactive==1)
 
-                                                <form id="delete-form-{{$student->id}}" style="display: none"
-                                                    action="{{ route('student.deactivate',$student->id) }}"
+                                                <form id="delete-form-{{$customer->id}}" style="display: none"
+                                                    action="{{ route('customer.deactivate',$customer->id) }}"
                                                     method="post">
                                                     {{ csrf_field() }}
 
@@ -200,7 +198,7 @@
                                                 <a href="" onclick="
                                                        if (confirm('Are you sure you want to Deactivate this?')) {
                                                                                     event.preventDefault();
-                                                           document.getElementById('delete-form-{{$student->id}}').submit();
+                                                           document.getElementById('delete-form-{{$customer->id}}').submit();
                                                            } else {
                                                            event.preventDefault();
                                                           }
@@ -208,15 +206,15 @@
                                                 </a>
                                                 @else
 
-                                                <form id="delete-form-{{$student->id}}" style="display: none"
-                                                    action="{{ route('student.activate',$student->id) }}" method="post">
+                                                <form id="delete-form-{{$customer->id}}" style="display: none"
+                                                    action="{{ route('customer.activate',$customer->id) }}" method="post">
                                                     {{ csrf_field() }}
 
                                                 </form>
                                                 <a href="" onclick="
                                                                                 if (confirm('Are you sure you want to Activate this?')) {
                                                                                     event.preventDefault();
-                                                                                document.getElementById('delete-form-{{$student->id}}').submit();
+                                                                                document.getElementById('delete-form-{{$customer->id}}').submit();
                                                                                 } else {
                                                                                     event.preventDefault();
                                                                                 }
@@ -231,9 +229,9 @@
 
 
                                             <td style="text-align: center">
-                                                @if (Auth::user()->id==$student->id)
+                                                @if (Auth::user()->id==$customer->id)
 
-                                                <a href="{{ route('student.edit',$student->id) }}"><span
+                                                <a href="{{ route('customer.edit',$customer->id) }}"><span
                                                         class="fa fa-edit fa-2x text-primary"></span></a>
 
                                                 @endif
@@ -242,8 +240,8 @@
 
                                             <td style="text-align: center">
 
-                                                <form id="delete-form-{{$student->id}}" style="display: none"
-                                                    action="{{ route('student.destroy',$student->id) }}" method="post">
+                                                <form id="delete-form-{{$customer->id}}" style="display: none"
+                                                    action="{{ route('customer.destroy',$customer->id) }}" method="post">
                                                     {{ csrf_field() }}
                                                     {{method_field('DELETE')}}
                                                 </form>
@@ -251,7 +249,7 @@
                                                 <a href="" onclick="
                                                                     if (confirm('Are you sure you want to delete this?')) {
                                                                         event.preventDefault();
-                                                                    document.getElementById('delete-form-{{$student->id}}').submit();
+                                                                    document.getElementById('delete-form-{{$customer->id}}').submit();
                                                                     } else {
                                                                         event.preventDefault();
                                                                     }
@@ -266,27 +264,18 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Surname</th>
-                                            <th>First Name</th>
-                                            <th>Reg. Number</th>
-                                            <th>Email</th>
-                                            <th>Phone</th>
-                                            <th>View Details</th>
-                                            {{-- <th>Status</th> --}}
-
-                                            {{-- @if (Auth::user()->role->id==1)
-                                            <th>Action</th>
-
-                                            @endif --}}
-
-
-
-                                            <th>Edit</th>
-
-
-                                            @if (Auth::user()->role->id==1)
-                                            <th>Delete</th>
-                                            @endif
+                                                <th>Surname</th>
+                                                <th>First Name</th>
+                                                <th>Email</th>
+                                                <th>Phone</th>
+                                                <th>Address</th>
+                                                <th>View Details</th>
+                                            
+                                                <th>Edit</th>
+    
+                                                @if (Auth::user()->role->id==1)
+                                                <th>Delete</th>
+                                                @endif
 
                                         </tr>
                                     </tfoot>

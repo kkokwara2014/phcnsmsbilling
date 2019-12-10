@@ -2,7 +2,7 @@
   <div class="pull-right hidden-xs">
     {{-- Powered by Done-Right Systems Inc. --}}
   </div>
-  <strong>Copyright &copy; 2019 courseregsys</strong> All rights
+  <strong>Copyright &copy; 2019 phcnsmsbilling</strong> All rights
   reserved.
 </footer>
 

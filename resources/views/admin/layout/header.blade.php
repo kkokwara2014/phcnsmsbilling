@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Courseregsys | Dashboard</title>
+    <title>PHCNSMSBilling | Dashboard</title>
 
     <link rel="shortcut icon" type="image/png" href="{{url('admin_assets/dist/img/','projlogo.png')}}" />
 
@@ -64,9 +64,9 @@
         <!-- Logo -->
         <a href="index2.html" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>Course</b>regsys</span>
+          <span class="logo-mini"><b>PHCN</b>smsbilling</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>courseregsys</b></span>
+          <span class="logo-lg"><b>phcnsmsbilling</b></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">

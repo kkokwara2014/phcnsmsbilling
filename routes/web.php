@@ -58,6 +58,8 @@ if ($timeIt > date('Y-m-d')) {
     Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
         Route::get('/', 'AdminController@index')->name('dashboard.index');
         Route::resource('billing', 'BillController');        
+        Route::resource('customer', 'CustomerController');        
+        Route::resource('phcnstaff', 'StaffController');        
 
         Route::get('user/profile', 'UserController@profileimage')->name('user.profile');
         Route::post('user/profile', 'UserController@updateprofileimage')->name('user.profile.update');
