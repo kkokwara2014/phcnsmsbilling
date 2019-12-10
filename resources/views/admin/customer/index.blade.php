@@ -8,8 +8,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Students
-            <small>All Students</small>
+            Customer
+            <small>All Customer</small>
         </h1>
         {{-- <ol class="breadcrumb">
               <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
