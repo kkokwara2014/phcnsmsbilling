@@ -24,7 +24,7 @@
 
                             <div>
                                 <label for="">Billing No.#</label>
-                            <input type="text" class="form-control" name="billnumber" value="{{'phcn'. rand(55000, 99955)}}" readonly>
+                            <input style="background-color: dodgerblue; color:floralwhite" type="text" class="form-control" name="billnumber" value="{{'phcn'. rand(55000, 99955)}}" readonly>
                             </div>
                             
                             <div>
