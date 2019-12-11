@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class BillController extends Controller
@@ -21,9 +22,11 @@ class BillController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($customer_id)
     {
-        //
+        $user = User::find($customer_id);
+        
+        return view('admin.bill.create',compact('user'));
     }
 
     /**

@@ -55,6 +55,7 @@
                                             <th>Email</th>
                                             <th>Phone</th>
                                             <th>Address</th>
+                                            <th>Action</th>
                                             <th>View Details</th>
                                         
                                             <th>Edit</th>
@@ -77,6 +78,7 @@
                                             <td>{{$customer->email}}</td>
                                             <td>{{$customer->phone}}</td>
                                             <td>{{$customer->address}}</td>
+                                            <td><a href="{{ route('billing.create',['customer_id' => $customer->id]) }}" class="btn btn-success btn-sm btn-block">Bill</a></td>
                                             <td style="text-align: center">
                                                 <a href="{{ route('customer.show',$customer->id) }}"><span
                                                         class="fa fa-eye fa-2x text-primary"></span></a>
@@ -171,6 +173,7 @@
                                             <td>{{$customer->email}}</td>
                                             <td>{{$customer->phone}}</td>
                                             <td>{{$customer->address}}</td>
+                                            <td><a href="#" class="btn btn-success btn-sm">Bill</a></td>
                                             <td style="text-align: center">
                                                 <a href="{{ route('customer.show',$customer->id) }}"><span
                                                         class="fa fa-eye fa-2x text-primary"></span></a>
@@ -269,6 +272,7 @@
                                                 <th>Email</th>
                                                 <th>Phone</th>
                                                 <th>Address</th>
+                                                <th>Action</th>
                                                 <th>View Details</th>
                                             
                                                 <th>Edit</th>
