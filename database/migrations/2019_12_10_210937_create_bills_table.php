@@ -22,6 +22,7 @@ class CreateBillsTable extends Migration
             $table->string('totalkwh');
             $table->string('totalecharge');
             $table->string('finalbill');
+            $table->string('billmonth');
             $table->timestamps();
         });
     }
