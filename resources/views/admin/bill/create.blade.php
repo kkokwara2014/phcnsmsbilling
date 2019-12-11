@@ -15,12 +15,17 @@
 
         <div class="row">
             <div class="col-md-5">
-
+                
                 <div class="box">
                     <!-- /.box-header -->
                     <div class="box-body">
                         <form action="{{ route('billing.store') }}" method="post">
                             {{ csrf_field() }}
+
+                            <div>
+                                <label for="">Billing #</label>
+                            <input type="text" name="billnumber" value="{{'phcn' . date('Y') . '_' . rand(55000, 99955)}}" readonly>
+                            </div>
                             
                             <div>
                                 <label for="name">Current Meter Reading</label>
