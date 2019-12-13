@@ -37,11 +37,13 @@
                             </div>
                             <div>
                                 <label for="name">Total KWh</label>
-                                <input id="totalkwh" type="text" class="form-control" name="totalkwh" readonly>
+                                <span style="background-color: dodgerblue; color: floralwhite;" id="totalkwh"></span>
                             </div>
+                            <input type="hidden" name="chargeperkwh" id="chargeperkwh" value="">
+                            <input type="hidden" name="fixedmonthlyfee" id="fixedmonthlyfee" value="">
                             <div>
                                 <label for="name">Final Bill</label>
-                                <input id="finalbill" type="text" class="form-control" name="finalbill" readonly>
+                                <span style="background-color: green; color: floralwhite;" id="finalbill"></span>
                             </div>
                             <br>
                             <button type="submit" class="btn btn-primary">Add Bill</button>

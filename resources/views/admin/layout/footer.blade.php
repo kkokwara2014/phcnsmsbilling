@@ -246,6 +246,15 @@
 <script>
   $(function () {
 
+    $('input').keyup(function(){
+      var currentreading=$('#currentreading').val() || 0;
+      var previousreading=$('#previousreading').val() || 0;
+
+      var totalkwh=currentreading-previousreading;
+
+      $('totalkwh').html(totalkwh);
+    })
+
     //DataTable
     $('#example1').DataTable({
         'sort':false,
