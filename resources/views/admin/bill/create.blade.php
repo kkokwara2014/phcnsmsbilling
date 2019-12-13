@@ -36,6 +36,10 @@
                                 <input id="previousreading" type="text" class="form-control" name="previousreading">
                             </div>
                             <div>
+                                <label for="name">Bill Month</label>
+                                <input id="datepickermonth" type="text" class="form-control" name="billmonth" placeholder="Bill Month">
+                            </div>
+                            <div>
                                 <label for="name">Total KWh</label>
                                 <span class="form-control" style="background-color: dodgerblue; color: floralwhite;" id="totalkwh"></span>
                             </div>

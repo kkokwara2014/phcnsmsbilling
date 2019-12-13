@@ -304,12 +304,13 @@
      
     })
 
-    //Only picking year
-    $('#datepickeryear').datepicker({
+    //Only picking month and year
+    $('#datepickermonth').datepicker({
       autoclose: true,
-      format: "yyyy",
-    viewMode: "years", 
-    minViewMode: "years"
+      changeMonth:true,
+      format: "mm-yyyy",
+    viewMode: "months", 
+    minViewMode: "months"
     })
 
     //iCheck for checkbox and radio inputs

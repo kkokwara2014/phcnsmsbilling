@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bill;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
@@ -38,7 +39,11 @@ class BillController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+
+        $bill=new Bill;
+
+        $bill->totalkwh= $('#totalkwh').text();
     }
 
     /**
