@@ -246,14 +246,19 @@
 <script>
   $(function () {
 
-    $('input').keyup(function(){
-      var currentreading=$('#currentreading').val() || 0;
-      var previousreading=$('#previousreading').val() || 0;
-
-      var totalkwh=currentreading-previousreading;
-
-      $('totalkwh').html(totalkwh);
-    })
+    
+    $("#currentreading, #previousreading").on("change", function(e){
+        e.preventDefault();
+        
+        var totalkwh = $("#currentreading").val() - $("#previousreading").val();
+        
+        var totalecharge=totalkwh * parseInt( $('#chargeperkwh').val());
+        var finalbill=totalecharge + parseInt($('#fixedmonthlyfee').val());
+        //set amount tendered as the value of "totalAmountTendered" and then trigger the change event on it
+        $("#totalkwh").html(totalkwh);
+        $("#totalecharge").html(totalecharge);
+        $("#finalbill").html(finalbill);
+    });
 
     //DataTable
     $('#example1').DataTable({
