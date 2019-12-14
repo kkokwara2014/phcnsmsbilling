@@ -258,6 +258,8 @@
         $("#totalkwh").html(totalkwh);
         $("#totalecharge").html(totalecharge);
         $("#finalbill").html(finalbill);
+
+        
     });
 
     //DataTable
