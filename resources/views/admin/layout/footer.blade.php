@@ -256,8 +256,8 @@
         var finalbill=totalecharge + parseInt($('#fixedmonthlyfee').val());
         //set amount tendered as the value of "totalAmountTendered" and then trigger the change event on it
         $("#totalkwh").val(totalkwh);
-        $("#totalecharge").html(totalecharge);
-        $("#finalbill").html(finalbill);
+        $("#totalecharge").val(totalecharge);
+        $("#finalbill").val(finalbill);
 
         
     });

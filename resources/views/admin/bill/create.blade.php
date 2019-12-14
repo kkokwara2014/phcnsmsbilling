@@ -46,13 +46,13 @@
                             </div>
                             <div>
                                 <label for="name">Total Energy Charge</label>
-                                <span class="form-control" style="background-color: peru; color: floralwhite;" id="totalecharge"></span>
+                                <input type="text" class="form-control" style="background-color: peru; color: floralwhite;" id="totalecharge" name="totalecharge">
                             </div>
                             <input type="hidden" name="chargeperkwh" id="chargeperkwh" value="150">
                             <input type="hidden" name="fixedmonthlyfee" id="fixedmonthlyfee" value="500">
                             <div>
                                 <label for="name">Final Bill</label>
-                                <span class="form-control" style="background-color: green; color: floralwhite;" id="finalbill"></span>
+                                <input type="text" class="form-control" style="background-color: green; color: floralwhite;" id="finalbill" name="finalbill">
                             </div>
                             <br>
                             <button type="submit" class="btn btn-primary">Add Bill</button>

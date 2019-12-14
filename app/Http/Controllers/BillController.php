@@ -39,13 +39,26 @@ class BillController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $this->validate($request,[
+            'currentreading'=>'required',
+            'previousreading'=>'required',
+        ]);
 
         $bill=new Bill;
 
-        $bill->totalkwh= $request->input('totalkwh');
+        $bill->user_id= $request->user_id;
+        $bill->billnumber= $request->billnumber;
+        $bill->currentreading= $request->currentreading;
+        $bill->previousreading= $request->previousreading;
+        $bill->totalkwh= $request->totalkwh;
+        $bill->totalecharge= $request->totalecharge;
+        $bill->billmonth= $request->billmonth;
+        $bill->finalbill= $request->finalbill;
+        
+        $bill->save();
 
-        dd($bill->totalkwh);
+        return redirect(route('billing.create'));
+        
     }
 
     /**
