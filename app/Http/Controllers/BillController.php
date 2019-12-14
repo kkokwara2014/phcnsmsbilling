@@ -43,9 +43,9 @@ class BillController extends Controller
 
         $bill=new Bill;
 
-        $bill->totalkwh= $request->totalkwh;
+        $bill->totalkwh= $request->input('totalkwh');
 
-        dd($request->totalkwh);
+        dd($bill->totalkwh);
     }
 
     /**

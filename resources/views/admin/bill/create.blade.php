@@ -41,8 +41,8 @@
                             </div>
                             <div>
                                 <label for="name">Total KWh</label>
-                                <span class="form-control" style="background-color: dodgerblue; color: floralwhite;" id="totalkwh"></span>
-                            <input type="hidden" id="totalkwh" name="totalkwh">
+                                {{-- <span class="form-control" style="background-color: dodgerblue; color: floralwhite;" id="totalkwh"></span> --}}
+                            <input type="text" class="form-control" name="totalkwh" id="totalkwh" style="background-color: dodgerblue; color: floralwhite;" readonly>
                             </div>
                             <div>
                                 <label for="name">Total Energy Charge</label>
