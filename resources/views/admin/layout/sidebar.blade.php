@@ -40,7 +40,7 @@
       {{-- @if (Auth::user()->role->id==1||Auth::user()->role->id==3) --}}
 
       <li><a href="{{route('customer.index')}}"><i class="fa fa-users"></i> Customers</a></li>
-      <li><a href="{{route('phcnstaff.index')}}"><i class="fa fa-user"></i> PHCN Staff</a></li>
+      {{-- <li><a href="{{route('phcnstaff.index')}}"><i class="fa fa-user"></i> PHCN Staff</a></li> --}}
 
       {{-- @endif --}}
 

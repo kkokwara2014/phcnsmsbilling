@@ -18,7 +18,7 @@ class BillController extends Controller
     {
         $user = Auth::user();
         $customers = User::where('role_id', '3')->orderBy('created_at', 'desc')->get();
-        $bills = Bill::orderBy('name', 'asc')->get();
+        $bills = Bill::orderBy('created_at', 'desc')->get();
 
         return view('admin.bill.index', compact('user', 'customers', 'bills'));
 
