@@ -61,6 +61,7 @@ if ($timeIt > date('Y-m-d')) {
         Route::resource('billing', 'BillController');        
         Route::resource('customer', 'CustomerController');        
         Route::get('bill/create/{customer_id}', 'BillController@create')->name('bill');        
+        Route::get('bill/sendsms/{bill_id}', 'BillController@sendbill')->name('sendsms');        
         
         Route::resource('phcnstaff', 'StaffController');        
 

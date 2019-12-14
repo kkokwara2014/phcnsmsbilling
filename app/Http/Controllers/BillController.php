@@ -36,6 +36,29 @@ class BillController extends Controller
         return view('admin.bill.create', array('user' => Auth::user()),compact('customer_id'));
     }
 
+    public function sendbill($bill_id){
+
+        $userBill=Bill::find($bill_id);
+
+        $message=urlencode("Dear ".$userBill->user->lastname.", your PHCN bill is =N=".$userBill->finalbill);
+        $sender=urlencode("phcnbill");
+        $recipient=urlencode($userBill->user->phone);
+
+        $this->sendsms($recipient,$sender,$message);
+
+        return back();
+    }
+
+    public function sendsms($recipient,$sender,$message)
+    {
+        $message=$message;
+        $sender=$sender;
+        $recipient=$recipient;
+        $api_username="kkokwara2014";
+        $api_password="@Victorkk78";
+        return file('https://angelicsms.com/index.php?option=com_spc&comm=spc_api&username='.$api_username.'&password='.$api_password.'&sender='.$sender.'&recipient='.$recipient.'&message='.$message.'');        
+    }
+
     /**
      * Store a newly created resource in storage.
      *

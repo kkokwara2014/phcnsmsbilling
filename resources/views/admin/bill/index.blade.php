@@ -65,7 +65,7 @@
                                         </a>
 
                                     </td> --}}
-                                    <td><a href="{{ route('billing.sendsms',$bill->id) }}" class="btn btn-success btn-sm btn-block"><span class="fa fa-send-o"></span> Send Bill</a></td>
+                                    <td><a href="{{ route('sendsms',$bill->id) }}" class="btn btn-success btn-sm btn-block"><span class="fa fa-send-o"></span> Send Bill</a></td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -109,4 +109,4 @@
 </div>
 <!-- /.content-wrapper -->
 
-@endsect
+@endsection
