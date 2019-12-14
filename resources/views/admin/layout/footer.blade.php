@@ -1,6 +1,6 @@
 <footer class="main-footer">
   <div class="pull-right hidden-xs">
-    {{-- Powered by Done-Right Systems Inc. --}}
+    Powered by Njoku - 2017/HND//CS.
   </div>
   <strong>Copyright &copy; 2019 phcnsmsbilling</strong> All rights
   reserved.

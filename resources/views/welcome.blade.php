@@ -110,7 +110,7 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="{{asset('bootstrap_assets/img/favicon.png')}}" rel="icon">
+  {{-- <link href="{{asset('bootstrap_assets/img/favicon.png')}}" rel="icon"> --}}
   <link href="{{asset('bootstrap_assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -152,13 +152,13 @@
 
       <div class="logo float-left">
         <!-- Uncomment below if you prefer to use an image logo -->
-        <h1 class="text-light"><a href="#intro" class="scrollto"><span>PHCN-SMS-Billing</span></a></h1>
+        <h1 class="text-light"><a href="#intro" class="scrollto"><span>PHCNSMSBilling</span></a></h1>
         <!-- <a href="#header" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
 
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-          <li class="active"><a href="#intro">Home</a></li>
+        <li class="active"><a href="{{route('index')}}">Home</a></li>
           {{-- <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li> --}}
           {{-- <li><a href="#portfolio">Portfolio</a></li>
@@ -180,8 +180,8 @@
               <li><a href="#">Drop Down 5</a></li>
             </ul>
           </li> --}}
-          <li><a href="#">Login</a></li>
-          <li><a href="#">Register</a></li>
+        <li><a href="{{route('login')}}">Login</a></li>
+        <li><a href="{{route('register')}}">Register</a></li>
         </ul>
       </nav><!-- .main-nav -->
       
@@ -228,13 +228,13 @@
           <div class="col-lg-7 col-md-6">
             <div class="about-content">
               <h2>About Us</h2>
-              <h3>Odio sed id eos et laboriosam consequatur eos earum soluta.</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-              <p>Aut dolor id. Sint aliquam consequatur ex ex labore. Et quis qui dolor nulla dolores neque. Aspernatur consectetur omnis numquam quaerat. Sed fugiat nisi. Officiis veniam molestiae. Et vel ut quidem alias veritatis repudiandae ut fugit. Est ut eligendi aspernatur nulla voluptates veniam iusto vel quisquam. Fugit ut maxime incidunt accusantium totam repellendus eum error. Et repudiandae eum iste qui et ut ab alias.</p>
+              <h3>...reducing paper-based billing</h3>
+              <p>Ensuring faster and wider coverage to all our customers Nation-wide.</p>
+              
               <ul>
-                <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="ion-android-checkmark-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                <li><i class="ion-android-checkmark-circle"></i> Saving time</li>
+                <li><i class="ion-android-checkmark-circle"></i> Saving cost</li>
+                
               </ul>
             </div>
           </div>
@@ -264,10 +264,10 @@
 
                 <div class="col-sm-6">
 
-                  <div class="footer-info">
-                    <h3>PHCN-SMS-Billing</h3>
+                  {{-- <div class="footer-info">
+                    <h3>PHCNSMSBilling</h3>
                     <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
-                  </div>
+                  </div> --}}
 
                   {{-- <div class="footer-newsletter">
                     <h4>Our Newsletter</h4>
@@ -279,17 +279,17 @@
 
                 </div>
 
-                <div class="col-sm-6">
+                {{-- <div class="col-sm-6">
                   <div class="footer-links">
                     <h4>Useful Links</h4>
                     <ul>
-                      <li><a href="#">Home</a></li>
+                      <li><a href="#">Home</a></li> --}}
                       {{-- <li><a href="#">About us</a></li>
                       <li><a href="#">Services</a></li>
                       <li><a href="#">Terms of service</a></li>
                       <li><a href="#">Privacy policy</a></li> --}}
-                    </ul>
-                  </div>
+                    {{-- </ul>
+                  </div> --}}
 
                   {{-- <div class="footer-links">
                     <h4>Contact Us</h4>
@@ -302,12 +302,12 @@
                     </p>
                   </div> --}}
 
-                  <div class="social-links">
+                  {{-- <div class="social-links">
                     <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> --}}
                     {{-- <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
                     <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a> --}}
-                  </div>
+                  {{-- </div> --}}
 
                 </div>
 
