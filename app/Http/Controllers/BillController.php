@@ -40,7 +40,7 @@ class BillController extends Controller
 
         $userBill=Bill::find($bill_id);
 
-        $message=urlencode("Dear ".$userBill->user->lastname.", your PHCN bill is =N=".$userBill->finalbill);
+        $message=urlencode("Dear ".$userBill->user->lastname.", your PHCN bill for the month ".$userBill->billmonth.  " is =N=".$userBill->finalbill);
         $sender=urlencode("phcnbill");
         $recipient=urlencode($userBill->user->phone);
 
