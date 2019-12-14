@@ -78,7 +78,7 @@
                                             <td>{{$customer->email}}</td>
                                             <td>{{$customer->phone}}</td>
                                             <td>{{$customer->address}}</td>
-                                            <td><a href="{{ route('billing.create')}}"
+                                            <td><a href="{{ route('bill',$customer->id)}}"
                                                     class="btn btn-success btn-sm btn-block">Bill</a>
                                             <input type="hidden" name="customer_id" value="{{$customer->id}}">
                                                 </td>

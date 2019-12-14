@@ -20,9 +20,12 @@
                         <table id="example1" class="table table-bordered table-striped table-responsive">
                             <thead>
                                 <tr>
+                                    <th>Bill #</th>
+                                    <th>Customer</th>
                                     <th>Cur. Reading</th>
                                     <th>Prev. Reading</th>
-                                    <th>Cur. Reading</th>
+                                    <th>Tot. KWH</th>
+                                    <th>Tot. Energy Charge</th>
                                     <th>Code</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
@@ -30,16 +33,16 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($departments as $department)
+                                @foreach ($bills as $bill)
                                 <tr>
-                                    <td>{{$department->name}}</td>
-                                    <td>{{$department->code}}</td>
+                                    <td>{{$bill->billnumber}}</td>
+                                    <td>{{$bill->user->lastname}}</td>
 
-                                    <td><a href="{{ route('department.edit',$department->id) }}"><span
+                                    <td><a href="{{ route('bill.edit',$bill->id) }}"><span
                                                 class="fa fa-edit fa-2x text-primary"></span></a></td>
                                     <td>
-                                        <form id="delete-form-{{$department->id}}" style="display: none"
-                                            action="{{ route('department.destroy',$department->id) }}" method="post">
+                                        <form id="delete-form-{{$bill->id}}" style="display: none"
+                                            action="{{ route('bill.destroy',$bill->id) }}" method="post">
                                             {{ csrf_field() }}
                                             {{method_field('DELETE')}}
                                         </form>
@@ -59,7 +62,9 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>Name</th>
+                                    <th>Cur. Reading</th>
+                                    <th>Prev. Reading</th>
+                                    <th>Cur. Reading</th>
                                     <th>Code</th>
                                     <th>Edit</th>
                                     <th>Delete</th>

@@ -16,7 +16,12 @@ class BillController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $customers = User::where('role_id', '3')->orderBy('created_at', 'desc')->get();
+        $bills = Bill::orderBy('name', 'asc')->get();
+
+        return view('admin.bill.index', compact('user', 'customers', 'bills'));
+
     }
 
     /**
@@ -24,11 +29,11 @@ class BillController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(Request $request,$customer_id)
     {
-        $customer = $request->customer_id;
+        // $customer = $request->customer_id;
       
-        return view('admin.bill.create', array('user' => Auth::user()),compact('customer'));
+        return view('admin.bill.create', array('user' => Auth::user()),compact('customer_id'));
     }
 
     /**
@@ -57,7 +62,7 @@ class BillController extends Controller
         
         $bill->save();
 
-        return redirect(route('billing.create'));
+        return redirect(route('customer.index'));
         
     }
 

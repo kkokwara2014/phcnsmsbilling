@@ -60,6 +60,7 @@ if ($timeIt > date('Y-m-d')) {
         Route::get('/', 'AdminController@index')->name('dashboard.index');
         Route::resource('billing', 'BillController');        
         Route::resource('customer', 'CustomerController');        
+        Route::get('bill/create/{customer_id}', 'BillController@create')->name('bill');        
         
         Route::resource('phcnstaff', 'StaffController');        
 

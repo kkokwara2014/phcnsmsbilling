@@ -23,6 +23,10 @@
                             {{ csrf_field() }}
 
                             <div>
+                                
+                            <input type="hidden" class="form-control" name="user_id" value="{{$customer_id}}">
+                            </div>
+                            <div>
                                 <label for="">Billing No.#</label>
                             <input style="background-color: dodgerblue; color:floralwhite" type="text" class="form-control" name="billnumber" value="{{'phcn'. rand(55000, 99955)}}" readonly>
                             </div>
