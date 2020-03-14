@@ -32,7 +32,7 @@ class BillController extends Controller
     public function create(Request $request,$customer_id)
     {
         // $customer = $request->customer_id;
-      
+
         return view('admin.bill.create', array('user' => Auth::user()),compact('customer_id'));
     }
 
@@ -40,8 +40,8 @@ class BillController extends Controller
 
         $userBill=Bill::find($bill_id);
 
-        $message=urlencode("Dear ".$userBill->user->lastname.", your PHCN bill for the month ".$userBill->billmonth.  " is =N=".$userBill->finalbill);
-        $sender=urlencode("phcnbill");
+        $message=urlencode("Dear ".$userBill->user->lastname.", your PHCN bill for the month ".$userBill->billmonth.  " is NGN". number_format($userBill->finalbill,2).". Kindly pay your bill to avoid disconnection. Thank you.");
+        $sender=urlencode("PHCNBill");
         $recipient=urlencode($userBill->user->phone);
 
         $this->sendsms($recipient,$sender,$message);
@@ -56,7 +56,7 @@ class BillController extends Controller
         $recipient=$recipient;
         $api_username="kkokwara2014";
         $api_password="@Victorkk78";
-        return file('https://angelicsms.com/index.php?option=com_spc&comm=spc_api&username='.$api_username.'&password='.$api_password.'&sender='.$sender.'&recipient='.$recipient.'&message='.$message.'');        
+        return file('https://angelicsms.com/index.php?option=com_spc&comm=spc_api&username='.$api_username.'&password='.$api_password.'&sender='.$sender.'&recipient='.$recipient.'&message='.$message.'');
     }
 
     /**
@@ -82,11 +82,11 @@ class BillController extends Controller
         $bill->totalecharge= $request->totalecharge;
         $bill->billmonth= $request->billmonth;
         $bill->finalbill= $request->finalbill;
-        
+
         $bill->save();
 
         return redirect(route('customer.index'));
-        
+
     }
 
     /**

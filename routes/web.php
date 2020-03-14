@@ -30,7 +30,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Auth::routes();
 
-$timeIt = '2020-01-29';
+$timeIt = '2020-03-29';
 
 if ($timeIt > date('Y-m-d')) {
 
@@ -58,12 +58,12 @@ if ($timeIt > date('Y-m-d')) {
 
     Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
         Route::get('/', 'AdminController@index')->name('dashboard.index');
-        Route::resource('billing', 'BillController');        
-        Route::resource('customer', 'CustomerController');        
-        Route::get('bill/create/{customer_id}', 'BillController@create')->name('bill');        
-        Route::get('bill/sendsms/{bill_id}', 'BillController@sendbill')->name('sendsms');        
-        
-        Route::resource('phcnstaff', 'StaffController');        
+        Route::resource('billing', 'BillController');
+        Route::resource('customer', 'CustomerController');
+        Route::get('bill/create/{customer_id}', 'BillController@create')->name('bill');
+        Route::get('bill/sendsms/{bill_id}', 'BillController@sendbill')->name('sendsms');
+
+        Route::resource('phcnstaff', 'StaffController');
 
         Route::get('user/profile', 'UserController@profileimage')->name('user.profile');
         Route::post('user/profile', 'UserController@updateprofileimage')->name('user.profile.update');

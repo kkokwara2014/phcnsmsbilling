@@ -1,6 +1,6 @@
 <footer class="main-footer">
   <div class="pull-right hidden-xs">
-    Powered by Njoku - 2017/HND//CS.
+    {{-- Powered by Njoku, Kingsley Igbo - 2017/HND/23955/CS. --}}
   </div>
   <strong>Copyright &copy; 2019 phcnsmsbilling</strong> All rights
   reserved.
@@ -246,12 +246,12 @@
 <script>
   $(function () {
 
-    
+
     $("#currentreading, #previousreading").on("change", function(e){
         e.preventDefault();
-        
+
         var totalkwh = $("#currentreading").val() - $("#previousreading").val();
-        
+
         var totalecharge=totalkwh * parseInt( $('#chargeperkwh').val());
         var finalbill=totalecharge + parseInt($('#fixedmonthlyfee').val());
         //set amount tendered as the value of "totalAmountTendered" and then trigger the change event on it
@@ -259,14 +259,14 @@
         $("#totalecharge").val(totalecharge);
         $("#finalbill").val(finalbill);
 
-        
+
     });
 
     //DataTable
     $('#example1').DataTable({
         'sort':false,
       })
-    
+
     //Initialize Select2 Elements
     $('.select2').select2()
 
@@ -303,7 +303,7 @@
     //Date picker
     $('#datepicker').datepicker({
       autoclose: true,
-     
+
     })
 
     //Only picking month and year
@@ -311,7 +311,7 @@
       autoclose: true,
       changeMonth:true,
       format: "mm-yyyy",
-    viewMode: "months", 
+    viewMode: "months",
     minViewMode: "months"
     })
 
