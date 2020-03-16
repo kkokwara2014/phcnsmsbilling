@@ -15,7 +15,13 @@
               <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
               <li class="active">Dashboard</li>
             </ol> --}}
+        <br>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-default">
+            <span class="fa fa-plus"></span> Add Customer
+        </button>
     </section>
+
+
 
     <!-- Main content -->
     <section class="content">
@@ -80,8 +86,8 @@
                                             <td>{{$customer->address}}</td>
                                             <td><a href="{{ route('bill',$customer->id)}}"
                                                     class="btn btn-success btn-sm btn-block">Bill</a>
-                                            <input type="hidden" name="customer_id" value="{{$customer->id}}">
-                                                </td>
+                                                <input type="hidden" name="customer_id" value="{{$customer->id}}">
+                                            </td>
                                             <td style="text-align: center">
                                                 <a href="{{ route('customer.show',$customer->id) }}"><span
                                                         class="fa fa-eye fa-2x text-primary"></span></a>
@@ -294,6 +300,151 @@
                         <!-- /.box -->
                     </div>
                 </div>
+
+                {{-- Data input modal area --}}
+                <div class="modal fade" id="modal-default">
+                    <div class="modal-dialog modal-lg">
+
+                        <form action="{{ route('customer.store') }}" method="post">
+                            {{ csrf_field() }}
+
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title"><span class="fa fa-user"></span> Add Customer</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">Last Name</label>
+                                                <input id="lastname" type="text"
+                                                    class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}"
+                                                    name="lastname" value="{{ old('lastname') }}" required autofocus
+                                                    placeholder="Last Name">
+
+                                                @if ($errors->has('lastname'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('lastname') }}</strong>
+                                                </span>
+                                                @endif
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="">First Name</label>
+                                                <input id="firstname" type="text"
+                                                    class="form-control{{ $errors->has('firstname') ? ' is-invalid' : '' }}"
+                                                    name="firstname" value="{{ old('firstname') }}" required autofocus
+                                                    placeholder="First Name">
+
+                                                @if ($errors->has('firstname'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('firstname') }}</strong>
+                                                </span>
+                                                @endif
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="">Email Address</label>
+                                                <input id="email" type="email"
+                                                    class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                                    name="email" value="{{ old('email') }}" required autofocus
+                                                    placeholder="Email">
+
+                                                @if ($errors->has('email'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                </span>
+                                                @endif
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Phone</label>
+                                                <input id="phone" type="tel"
+                                                    class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}"
+                                                    name="phone" value="{{ old('phone') }}" required placeholder="Phone"
+                                                    maxlength="11">
+
+                                                @if ($errors->has('phone'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('phone') }}</strong>
+                                                </span>
+                                                @endif
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">State of Residence</label>
+                                                <select name="location_id" class="form-control" @error('location_id') is-invalid
+                                                    @enderror value="{{ old('location_id') }}" required>
+                                                    <option selected="disabled">Select Location</option>
+                                                    @foreach ($locations as $location)
+                                                    <option value="{{$location->id}}">{{$location->name}}</option>
+                                                    @endforeach
+                                                </select>
+
+                                                @error('location_id')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="">Residence Address</label>
+
+                                                <textarea class="form-control" name="address" id="" cols="30"
+                                                    rows="7">{{ old('address') }}</textarea>
+
+                                                @error('address')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="">Password</label>
+                                                <input id="password" type="password"
+                                                    class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                                                    name="password" required placeholder="Password">
+
+                                                @if ($errors->has('password'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                </span>
+                                                @endif
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="">Repeat Password</label>
+                                                <input id="password-confirm" type="password" class="form-control"
+                                                    name="password_confirmation" required placeholder="Repeat Password">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    {{-- hidden fields --}}
+
+                                    <input type="hidden" name="role_id" value="{{'3'}}">
+
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+
+                        </form>
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal -->
 
             </section>
             <!-- /.Left col -->

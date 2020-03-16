@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,8 +42,8 @@ if ($timeIt > date('Y-m-d')) {
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');
 
-    Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-    Route::post('register', 'Auth\RegisterController@register');
+    // Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+    // Route::post('register', 'Auth\RegisterController@register');
 
 
     Route::post('/logout', 'Auth\LoginController@userLogout')->name('user.logout');

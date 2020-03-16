@@ -42,7 +42,31 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'lastname' => 'required|string',
+            'firstname' => 'required|string',
+            'email' => 'required|email|unique:users',
+            'phone' => 'required',
+            'address' => 'required',
+            'location_id' => 'required',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        $user = new User;
+        $user->lastname = $request->lastname;
+        $user->firstname = $request->firstname;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->password = bcrypt($request->password);
+        $user->address = $request->address;
+        $user->location_id = $request->location_id;
+        $user->role_id = $request->role_id;
+
+
+        $user->save();
+
+        return redirect(route('customer.index'))->with('success', 'Customer account has been created successfully!');
+
     }
 
     /**
@@ -56,7 +80,7 @@ class CustomerController extends Controller
         $customer = User::find($id);
 
         $billings=Bill::where('user_id',$id)->get();
-    
+
         return view('admin.customer.show', array('user' => Auth::user()), compact('customer','billings'));
     }
 

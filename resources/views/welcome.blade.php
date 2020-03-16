@@ -129,7 +129,7 @@
   <!-- Main Stylesheet File -->
   <link href="{{asset('bootstrap_assets/css/style.css')}}" rel="stylesheet">
 
-  
+
 </head>
 
 <body>
@@ -143,7 +143,7 @@
         <div class="social-links">
           <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
           <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-          
+
         </div>
       </div>
     </div>
@@ -181,10 +181,10 @@
             </ul>
           </li> --}}
         <li><a href="{{route('login')}}">Login</a></li>
-        <li><a href="{{route('register')}}">Register</a></li>
+        {{-- <li><a href="{{route('register')}}">Register</a></li> --}}
         </ul>
       </nav><!-- .main-nav -->
-      
+
     </div>
   </header><!-- #header -->
 
@@ -200,7 +200,7 @@
             {{-- <a href="#" class="btn-get-started scrollto">Get Started</a> --}}
           </div>
         </div>
-  
+
         <div class="col-md-6 intro-img order-md-last order-first">
           <img src="{{asset('bootstrap_assets/img/intro-img.svg')}}" alt="" class="img-fluid">
         </div>
@@ -230,11 +230,11 @@
               <h2>About Us</h2>
               <h3>...reducing paper-based billing</h3>
               <p>Ensuring faster and wider coverage to all our customers Nation-wide.</p>
-              
+
               <ul>
                 <li><i class="ion-android-checkmark-circle"></i> Saving time</li>
                 <li><i class="ion-android-checkmark-circle"></i> Saving cost</li>
-                
+
               </ul>
             </div>
           </div>
@@ -245,7 +245,7 @@
 
 
 
-  
+
 
   </main>
 
@@ -318,7 +318,7 @@
           <div class="col-lg-6">
 
             {{-- <div class="form">
-              
+
               <h4>Send us a message</h4>
               <p>Eos ipsa est voluptates. Nostrum nam libero ipsa vero. Debitis quasi sit eaque numquam similique commodi harum aut temporibus.</p>
               <form action="" method="post" role="form" class="contactForm">
@@ -348,7 +348,7 @@
 
           </div>
 
-          
+
 
         </div>
 
@@ -359,7 +359,7 @@
       <div class="copyright">
         &copy; Copyright <strong>phcnsmsbilling</strong>. All Rights Reserved
       </div>
-      
+
     </div>
   </footer><!-- #footer -->
 
