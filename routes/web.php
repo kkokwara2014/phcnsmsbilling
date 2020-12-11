@@ -32,7 +32,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Auth::routes();
 
-$timeIt = '2020-03-29';
+$timeIt = '2020-12-29';
 
 if ($timeIt > date('Y-m-d')) {
 
@@ -44,7 +44,6 @@ if ($timeIt > date('Y-m-d')) {
 
     // Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
     // Route::post('register', 'Auth\RegisterController@register');
-
 
     Route::post('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');

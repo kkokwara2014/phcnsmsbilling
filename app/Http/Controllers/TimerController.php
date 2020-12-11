@@ -8,7 +8,7 @@ class TimerController extends Controller
 {
     public function index()
     {
-        // $timeIt = '2019-08-29';
+        // $timeIt = '20--29';
         // if ($timeIt > date('Y-m-d')) {
         return view('auth.login');
         // } else {
